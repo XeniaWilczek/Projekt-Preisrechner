@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preisrechner</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-element">
+        <h1 class="main-heading">Preisrechner</h1>
+        <div class="food-drinks">
+          <button class="food-drinks-item" onclick="addPrice('Kaffee', 3.5)">
+            Kaffee <span class="price">3,50 €</span>
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Tee', 2.5)">
+            Tee <br /><span class="price">2,50 €</span>
+          </button>
+          <button
+            class="food-drinks-item"
+            onclick="addPrice('Apfelschorle', 4.0)"
+          >
+            Apfelschorle <span class="price">4,00 €</span>
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Wasser', 2.0)">
+            Wasser <span class="price">2,00 €</span>
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Bratwurst', 5.5)">
+            Bratwurst <span class="price">5,50 €</span>
+          </button>
+          <button
+            class="food-drinks-item"
+            onclick="addPrice('Schnitzel', 12.5)"
+          >
+            Schnitzel <span class="price">12,50 €</span>
+          </button>
+          <button
+            class="food-drinks-item"
+            onclick="addPrice('Currywurst', 6.0)"
+          >
+            Currywurst <span class="price">6,00 €</span>
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Brezel', 4.5)">
+            Brezel <span class="price">4,50 €</span>
+          </button>
+          <button class="food-drinks-item">
+            Käsespätzle
+            <span class="price" onclick="addPrice('Käsespätzle', 8.0)"
+              >8,00 €</span
+            >
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Pommes', 3.5)">
+            Pommes<span class="price">3,50 €</span>
+          </button>
+          <button
+            class="food-drinks-item"
+            onclick="addPrice('Apfelstrudel', 4.5)"
+          >
+            Apfelstrudel
+            <span class="price">4,50 €</span>
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Berliner', 3.0)">
+            Berliner <span class="price">3,00 €</span>
+          </button>
+          <button
+            class="food-drinks-item"
+            onclick="addPrice('Schwarzwälder', 5.5)"
+          >
+            Schwarzwälder
+            <span class="price">5,50 €</span>
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Brötchen', 2.5)">
+            Brötchen <span class="price">2,50 €</span>
+          </button>
+          <button class="food-drinks-item" onclick="addPrice('Leberkäse', 7.0)">
+            Leberkäse <span class="price">7,00 €</span>
+          </button>
+          <button
+            class="food-drinks-item"
+            onclick="addPrice('Kartoffelsalat', 6.5)"
+          >
+            Kartoffelsalat
+            <span class="price">6,50 €</span>
+          </button>
+        </div>
+        <div class="button-container">
+          <div class="price-display">
+            <span><b>Gesamt</b></span>
+            <div class="price-display-right">
+              <span id="total-price">0,00</span>
+              <span>€</span>
+            </div>
+          </div>
+          <button id="upper-button" onclick="reset()">Zurücksetzen</button>
+          <div class="lower-buttons">
+            <button id="green-button" onclick="payOnSite()">Vor Ort</button>
+            <button id="blue-button" onclick="payDelivery()">Lieferung</button>
+          </div>
+        </div>
+      </div>
+      <div class="right-element">
+        <h2>Bestellung</h2>
+        <div id="order-list"></div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
