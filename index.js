@@ -4,8 +4,6 @@ let count = 0;
 function addPrice(name, price) {
   //Nun Gesamtpreis berechnen und anzeigen
   count = count + price;
-  console.log(price, count, name);
-  console.log("Gesamtpreis: " + count + " €");
   showOrder(name, price);
   displayTotalPrice();
 }
@@ -13,13 +11,11 @@ function addPrice(name, price) {
 function displayTotalPrice() {
   const display = document.getElementById("total-price");
   display.innerHTML = count;
-  console.log(count);
 }
 //Funktion zur Anzeige der bestellten Produkte (rechts aufgelistet)
 function showOrder(name, price) {
   const show = document.getElementById("order-list");
   show.innerHTML += `<p> ${name}, ${price} €</p>`;
-  console.log(name, price);
 }
 
 //Funktion zum Zurücksetzen des Gesamtpreises und der Liste aufgezählter Produkte
@@ -32,7 +28,7 @@ function reset() {
   } else {
     //...dann werden Produkte aus Anzeige entfernt.
     const show = document.getElementById("order-list");
-    show.innerHTML = " ";
+    show.innerHTML = "";
     //...danach Wird Gesamtpreis auf 0 gesetzt...
     count = 0;
     //...danach wird Gesamtpreis = 0€ angezeigt.
