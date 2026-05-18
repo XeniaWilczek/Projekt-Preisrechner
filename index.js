@@ -49,19 +49,19 @@ function payOnSite() {
   }
 }
 function payDelivery() {
-  //Wenn  Gesamtpreis = 0, kommt Hinweis: Zuerst Produkte auswählen!
   if (count === 0) {
     alert("Bitte zuerst Artikel auswählen!");
-    //ansonsten: Wenn Produkte ausgewählt wurden...
-    //..und der Betrag <20€, dann Hinweis auf Mindestbetrag für Bestellung
   } else if (count < 20) {
     displayTotalPrice();
     alert("Mindestbetrag für Lieferung: 20€!");
-    //Wenn Betrag>=20€, dann 2,50€ hinzuzählen als Liefergebühr
   } else {
     count = count + 2.5;
     displayTotalPrice();
-    alert("Gesamtpreis inkl. 2.50€ Liefergebühr: " + count + " €");
-    reset();
+
+    // abwarten, damit der Gesamtpreis angezeigt wird, bevor das Feld geleert wird (alert stört sonst)
+    setTimeout(function () {
+      alert("Gesamtpreis inkl. 2.50€ Liefergebühr: " + count + " €");
+      reset();
+    }, 10);
   }
 }
