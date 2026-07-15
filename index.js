@@ -1,6 +1,6 @@
 //Funktion für Addition des Preises mit Variable count
 let count = 0;
-// Parameter price für aktuell dazugezählten Preis, auch Parametername für Produktnamen
+// Parameter price für aktuell dazugezählten Preis
 function addPrice(name, price) {
   //Nun Gesamtpreis berechnen und anzeigen
   count = count + price;
@@ -48,6 +48,7 @@ function payOnSite() {
     reset();
   }
 }
+
 function payDelivery() {
   if (count === 0) {
     alert("Bitte zuerst Artikel auswählen!");
@@ -59,7 +60,7 @@ function payDelivery() {
     displayTotalPrice();
 
     // abwarten, damit der Gesamtpreis angezeigt wird, bevor das Feld geleert wird (alert stört sonst)
-    setTimeout(function () {
+    setTimeout(() => {
       alert("Gesamtpreis inkl. 2.50€ Liefergebühr: " + count + " €");
       reset();
     }, 10);
